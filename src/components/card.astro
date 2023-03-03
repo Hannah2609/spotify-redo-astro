@@ -1,0 +1,33 @@
+---
+const {titel, about, img} = Astro.props;
+---
+
+<article>
+    <div>
+    <img src={img} alt="">
+     <button class="play-btn">
+        <svg viewBox="0 0 24 24"
+          ><path
+            d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+          ></path></svg
+        >
+      </button>
+    </div>
+    <h2>{titel}</h2>
+    <h3>{about}</h3>
+
+</article>
+
+<style>
+article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: rgb(30, 30, 30);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    max-width: 250px;
+  }
+
+</style>

@@ -1,15 +1,172 @@
 ---
+import "../CSS/style.css";
+import Nav from "../components/nav.astro";
+import Button from "../components/button.astro";
+import Card from "../components/card.astro";
+import Topbar from "../components/topbar.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Nav />
+    <section>
+      <header>
+		<Topbar />
+	  </header>
+
+      <main>
+      
+        <section class="main_section"> 
+		 <div class="flex_h1">
+          <h1>Focus</h1>
+          <h3>Show all</h3>
+        </div>
+          <div class="card_list">
+            <Card
+              img="spotify_images/peaceful_piano.jpeg"
+              titel="Peaceful Piano"
+              about="Relax and indulge with beautiful piano pieces"
+            />
+            <Card
+              img="spotify_images/deep_focus.jpeg"
+              titel="Deep Focus"
+              about="Keep calm and focus with ambient and post-rock.."
+            />
+            <Card
+              img="spotify_images/instrumental_study.jpeg"
+              titel="Instrumental Study"
+              about="Focus with soft study music in the background"
+            />
+            <Card
+              img="spotify_images/jazz_vibes.jpeg"
+              titel="Jazz Vibes"
+              about="The original chill instrumental beats playlist"
+            />
+            <Card
+              img="spotify_images/focus_flow.jpeg"
+              titel="Focus Flow"
+              about="Uptempo instrumental hip hop beats"
+            />
+          </div>
+
+          <div class="flex_h1">
+          <h1>Spotify Playlists</h1>
+          <h3>Show all</h3>
+        </div>
+          <div class="card_list">
+            <Card
+              img="spotify_images/tth.jpeg"
+              titel="Today's Top Hits"
+              about="Ariana & THE WEEKEND are on top of the Hottest 50!"
+            />
+            <Card
+              img="spotify_images/rap_caviar.jpeg"
+              titel="Rap Caviar"
+              about="New music from Nicki Minaj, Don Toliver and BIA"
+            />
+            <Card
+              img="spotify_images/all_out_2010s.jpeg"
+              titel="All Out 2010s"
+              about="The biggest songs of the 2010s"
+            />
+            <Card
+              img="spotify_images/rock_classics.jpeg"
+              titel="Rock Classics"
+              about="Rock legens & epic songs that continue to inspire.."
+            />
+            <Card
+              img="spotify_images/chill_hits.jpeg"
+              titel="Chill Hits"
+              about="Kick back to the best new and recent chill hits"
+            />
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <footer>
+      <div>
+        <h4>PREVIEW OF SPOTIFY</h4>
+        <h5>
+          Sign up to get unlimited songs and podcast with occasinal ads. No
+          credit card needed.
+        </h5>
+      </div>
+
+      <div>
+        <Button variant="primary" size="medium">Sign up free</Button>
+      </div>
+    </footer>
+  </body>
 </html>
+
+<style>
+  body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "nav topbar"
+      "nav main"
+      "footer footer";
+    height: 100vh;
+  }
+  main {
+    grid-area: main;
+  }
+  nav {
+    grid-area: nav;
+  }
+  header {
+    grid-area: topbar;
+	overflow: hidden;
+  }
+
+  footer {
+    background: rgb(255, 67, 251);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 67, 251, 1) 0%,
+      rgba(227, 142, 246, 1) 29%,
+      rgba(146, 213, 242, 1) 100%
+    );
+    height: 5rem;
+    padding: 10px;
+	padding-inline: 2rem;
+    grid-column: 1/3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	overflow: hidden;
+	grid-area: footer;
+
+	
+  }
+.flex_h1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 2rem;
+}
+  .card_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .main_section {
+    background: var(--background-light);
+	padding: 2rem;
+	overflow: auto;
+	max-height: 77.8vh;
+  }
+</style>
