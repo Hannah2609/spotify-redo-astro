@@ -3,10 +3,10 @@ const {titel, about, img} = Astro.props;
 ---
 
 <article>
-    <div>
+    <div class="image">
     <img src={img} alt="">
      <button class="play-btn">
-        <svg viewBox="0 0 24 24"
+        <svg width="24" height="24" viewBox="0 0 24 24"
           ><path
             d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
           ></path></svg
@@ -29,5 +29,38 @@ article {
     transition: background 0.3s ease;
     max-width: 250px;
   }
+ 
+  article:hover {
+    background: var(--background-light-hover) ;
+    
+  }
+
+  .image{
+    position: relative;
+  }
+
+
+  .play-btn {
+    position: absolute;
+    top: 70%;
+    left: 65%;
+    background-color: var(--brand-color);
+    border: none;
+    box-shadow: var(--shadow-default);
+    padding: 13px;
+    transition: 0.3s;
+ 
+  }
+
+
+  .play-btn:not(article:hover *) {
+   opacity: 0;
+  }
+
+  .play-btn:hover {
+    scale: 1.04;
+
+  }
+
 
 </style>

@@ -25,6 +25,13 @@ const { variant, size } = Astro.props;
     border: none;
   }
 
+  /* search */
+    [data-variant="search"] {
+    background-color: white;
+    color: var(--text-muted);
+    border: none;
+  }
+
   [data-size="small"] {
     font-size: 15px;
     font-weight: 800;
@@ -36,6 +43,14 @@ const { variant, size } = Astro.props;
     font-weight: 600;
     padding: 18px;
     padding-inline: 2rem;
+  }
+
+
+  [data-size="search"] {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 12px;
+    width: 150%;
   }
 
   [data-variant="primary"]:hover {
@@ -50,4 +65,5 @@ const { variant, size } = Astro.props;
     transform: scale(1.05);
     color: white;
   }
+  
 </style>

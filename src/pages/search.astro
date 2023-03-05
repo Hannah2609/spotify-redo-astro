@@ -1,0 +1,119 @@
+---
+import "../CSS/style.css";
+import Nav from "../components/nav.astro";
+import Button from "../components/button.astro";
+import Topbar from "../components/topbar.astro";
+import SearchCard from "../components/searchCard.astro";
+import TopbarSearch from "../components/topbarSearch.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Nav />
+    <section>
+      <header>
+        <TopbarSearch/>
+      </header>
+
+      <main>
+        <section class="main_section">
+            <h1>Focus</h1>
+          <div class="card_list">
+            <SearchCard img="/spotify_images/podcast.png" />
+            <SearchCard img="/spotify_images/hiphop.png" />
+            <SearchCard img="/spotify_images/dansk.png" />
+            <SearchCard img="/spotify_images/hit.png" />
+            <SearchCard img="/spotify_images/latin.png" />
+            <SearchCard img="/spotify_images/livsbegivenheder.png" />
+            <SearchCard img="/spotify_images/pop.png" />
+            <SearchCard img="/spotify_images/rock.png" />
+            <SearchCard img="/spotify_images/specielt.png" />
+            <SearchCard img="/spotify_images/hiphop.png" />
+            <SearchCard img="/spotify_images/udgivelser.jpeg" />
+            <SearchCard img="/spotify_images/podcast.png" />
+            <SearchCard img="/spotify_images/hit.png" />
+            <SearchCard img="/spotify_images/latin.png" />
+            <SearchCard img="/spotify_images/pop.png" />
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <footer>
+      <div>
+        <h4>PREVIEW OF SPOTIFY</h4>
+        <h5>
+          Sign up to get unlimited songs and podcast with occasinal ads. No
+          credit card needed.
+        </h5>
+      </div>
+
+      <div>
+        <Button class="searchbar" variant="primary" size="medium">Sign up free</Button>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "nav topbar"
+      "nav main"
+      "footer footer";
+    height: 100vh;
+  }
+  main {
+    grid-area: main;
+  }
+  nav {
+    grid-area: nav;
+  }
+  header {
+    grid-area: topbar;
+    overflow: hidden;
+  }
+
+  footer {
+    background: rgb(255, 0, 245);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 0, 245, 1) 0%,
+      rgba(149, 212, 255, 1) 100%
+    );
+    height: 5rem;
+    padding: 10px;
+    padding-inline: 2rem;
+    grid-column: 1/3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    grid-area: footer;
+  }
+  
+  .card_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .main_section {
+    background: var(--background-light);
+    padding: 2rem;
+    overflow: auto;
+    max-height: 77.8vh;
+  }
+
+</style>
