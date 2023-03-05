@@ -1,5 +1,5 @@
 :root {
-  --background-color: #121212;
+  --background-color: #000000;
   --background-light: #181818;
   --background-light-hover: #282828;
   --black: black;
@@ -55,6 +55,7 @@ a {
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 600;
+  font-size: 14px;
 }
 a:hover {
   color: white;
@@ -73,15 +74,16 @@ button {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 20px;
   color: white;
 }
 h2 {
-  font-size: 18px;
+  font-size: 15px;
   color: white;
 }
 h3 {
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 400;
 }
 h4 {
   font-size: 15px;
